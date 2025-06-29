@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HouseCallVet - Compassionate Mobile Veterinary Care</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8; /* Light background */
+            color: #333;
+        }
+        /* Custom scroll-to-top button styles (optional) */
+        #scrollToTopBtn {
+            display: none; /* Hidden by default */
+            position: fixed; /* Fixed position */
+            bottom: 20px; /* Place at the bottom */
+            right: 20px; /* Place at the right */
+            z-index: 99; /* Ensure it's above other content */
+            border: none; /* Remove borders */
+            outline: none; /* Remove outline */
+            background-color: #4CAF50; /* Green background */
+            color: white; /* White text */
+            cursor: pointer; /* Add a mouse pointer on hover */
+            padding: 15px; /* Some padding */
+            border-radius: 50%; /* Rounded shape */
+            font-size: 18px; /* Increase font size */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+        #scrollToTopBtn:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md py-4">
+        <nav class="container mx-auto px-4 flex justify-between items-center">
+            <!-- Logo/Brand Name -->
+            <a href="#" class="text-2xl md:text-3xl font-bold text-green-700">HouseCallVet</a>
+            <!-- Mobile Navigation (hidden on desktop) -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+            <!-- Desktop Navigation -->
+            <div id="desktop-menu" class="hidden md:flex space-x-6 text-lg">
+                <a href="#hero" class="text-gray-600 hover:text-green-700 transition duration-300">Home</a>
+                <a href="#about" class="text-gray-600 hover:text-green-700 transition duration-300">About Us</a>
+                <a href="#services" class="text-gray-600 hover:text-green-700 transition duration-300">Services</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-green-700 transition duration-300">Testimonials</a>
+                <a href="#contact" class="text-gray-600 hover:text-green-700 transition duration-300">Contact</a>
+            </div>
+        </nav>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu-overlay" class="fixed inset-0 bg-gray-800 bg-opacity-90 z-50 hidden md:hidden">
+            <div class="flex justify-end p-4">
+                <button id="close-mobile-menu" class="text-white text-3xl focus:outline-none">&times;</button>
+            </div>
+            <nav class="flex flex-col items-center space-y-6 text-2xl text-white">
+                <a href="#hero" class="hover:text-green-400 transition duration-300 py-2" onclick="closeMobileMenu()">Home</a>
+                <a href="#about" class="hover:text-green-400 transition duration-300 py-2" onclick="closeMobileMenu()">About Us</a>
+                <a href="#services" class="hover:text-green-400 transition duration-300 py-2" onclick="closeMobileMenu()">Services</a>
+                <a href="#testimonials" class="hover:text-green-400 transition duration-300 py-2" onclick="closeMobileMenu()">Testimonials</a>
+                <a href="#contact" class="hover:text-green-400 transition duration-300 py-2" onclick="closeMobileMenu()">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="relative bg-gradient-to-r from-green-500 to-blue-500 text-white py-20 md:py-32 overflow-hidden rounded-b-lg">
+            <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between z-10 relative">
+                <div class="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">Compassionate Vet Care, Right at Your Door.</h1>
+                    <p class="text-xl md:text-2xl mb-8">Providing gentle, professional veterinary services in the comfort of your home.</p>
+                    <a href="#contact" class="bg-white text-green-700 hover:bg-gray-100 px-8 py-4 rounded-full font-semibold text-lg md:text-xl shadow-lg transition duration-300 transform hover:scale-105">Book an Appointment</a>
+                </div>
+                <div class="md:w-1/2 flex justify-center md:justify-end">
+                    <!-- Placeholder for an image of a vet with a pet at home -->
+                    <img src="https://placehold.co/500x350/B2F7E1/0A3D2F?text=Vet+House+Call" alt="Veterinarian performing house call" class="rounded-lg shadow-2xl max-w-full h-auto">
+                </div>
+            </div>
+            <!-- Background pattern for visual interest -->
+            <div class="absolute inset-0 opacity-10">
+                <svg class="w-full h-full" fill="none" viewBox="0 0 100 100">
+                    <defs>
+                        <pattern id="pattern-vet" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+                            <circle cx="2" cy="2" r="1" fill="currentColor"></circle>
+                        </pattern>
+                    </defs>
+                    <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-vet)" class="text-green-600"></rect>
+                </svg>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="container mx-auto px-4 py-16 md:py-24">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-4">About HouseCallVet</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Dedicated to providing a stress-free and personalized veterinary experience for your beloved pets.</p>
+            </div>
+            <div class="flex flex-col md:flex-row items-center md:space-x-12">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <img src="https://placehold.co/600x400/98E6CD/0F4C3B?text=Caring+Vet" alt="Caring veterinarian with a dog" class="rounded-lg shadow-xl max-w-full h-auto">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl md:text-3xl font-semibold text-gray-700 mb-4">Our Mission and Values</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        At HouseCallVet, we believe that veterinary care should be convenient, comfortable, and tailored to your pet's individual needs. We specialize in bringing high-quality medical services directly to your doorstep, minimizing stress for both you and your furry family members.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        We are committed to compassionate care, clear communication, and building lasting relationships with our clients. Our goal is to make veterinary care accessible and a positive experience for every pet.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="bg-green-100 py-16 md:py-24 rounded-lg">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-4">Our Comprehensive House Call Services</h2>
+                    <p class="text-lg text-gray-600 max-w-4xl mx-auto">We offer a wide range of veterinary services, all delivered with expertise and compassion in the familiar surroundings of your home.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service Card 1 -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition duration-300">
+                        <div class="text-5xl text-green-600 mb-4">🐾</div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Wellness Exams & Vaccinations</h3>
+                        <p class="text-gray-600">Routine check-ups, preventive care, and necessary vaccinations administered in a calm, home environment.</p>
+                    </div>
+                    <!-- Service Card 2 -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition duration-300">
+                        <div class="text-5xl text-green-600 mb-4">💊</div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Minor Illness & Injury Care</h3>
+                        <p class="text-gray-600">Diagnosis and treatment for common ailments like ear infections, skin issues, limping, and more.</p>
+                    </div>
+                    <!-- Service Card 3 -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition duration-300">
+                        <div class="text-5xl text-green-600 mb-4">💉</div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Bloodwork & Lab Services</h3>
+                        <p class="text-gray-600">Collection of samples for diagnostic testing, sent to a trusted lab with results communicated promptly.</p>
+                    </div>
+                    <!-- Service Card 4 -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition duration-300">
+                        <div class="text-5xl text-green-600 mb-4">🧡</div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Palliative & Hospice Care</h3>
+                        <p class="text-gray-600">Comfort and support for senior or terminally ill pets, focusing on quality of life in their final stages.</p>
+                    </div>
+                    <!-- Service Card 5 -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition duration-300">
+                        <div class="text-5xl text-green-600 mb-4">🌈</div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">In-Home Euthanasia</h3>
+                        <p class="text-gray-600">Providing a peaceful and dignified farewell in the familiar and loving comfort of your home.</p>
+                    </div>
+                    <!-- Service Card 6 -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition duration-300">
+                        <div class="text-5xl text-green-600 mb-4">✈️</div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Health Certificates for Travel</h3>
+                        <p class="text-gray-600">Ensuring your pet meets all requirements for safe and legal travel, completed at your convenience.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="container mx-auto px-4 py-16 md:py-24">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-4">What Our Clients Say</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Hear directly from pet owners who have experienced the difference of HouseCallVet.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Testimonial Card 1 -->
+                <div class="bg-white rounded-lg shadow-lg p-8 flex flex-col items-center text-center">
+                    <img src="https://placehold.co/80x80/E5E7EB/6B7280?text=JD" alt="Client Avatar" class="rounded-full w-20 h-20 mb-4 object-cover">
+                    <p class="text-gray-700 italic mb-4">"HouseCallVet made our senior dog's last vet visit so peaceful. The compassion and professionalism were truly outstanding."</p>
+                    <p class="font-semibold text-gray-800">- Jane D., Happy Client</p>
+                </div>
+                <!-- Testimonial Card 2 -->
+                <div class="bg-white rounded-lg shadow-lg p-8 flex flex-col items-center text-center">
+                    <img src="https://placehold.co/80x80/E5E7EB/6B7280?text=AM" alt="Client Avatar" class="rounded-full w-20 h-20 mb-4 object-cover">
+                    <p class="text-gray-700 italic mb-4">"Our cat gets so stressed at clinics. HouseCallVet was a game-changer! Dr. [Vet's Name] was so patient and gentle."</p>
+                    <p class="font-semibold text-gray-800">- Alex M., Grateful Owner</p>
+                </div>
+                <!-- Add more testimonials as needed -->
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-gray-800 text-white py-16 md:py-24 rounded-t-lg">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Ready for Convenient Pet Care?</h2>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Contact HouseCallVet today to schedule an appointment or to learn more about our services.</p>
+                <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-12">
+                    <div class="flex items-center text-lg md:text-xl">
+                        <span class="mr-3 text-green-400 text-3xl">📞</span>
+                        <a href="tel:+1234567890" class="hover:underline">+1 (234) 567-890</a>
+                    </div>
+                    <div class="flex items-center text-lg md:text-xl">
+                        <span class="mr-3 text-green-400 text-3xl">📧</span>
+                        <a href="mailto:info@housecallvet.com" class="hover:underline">info@housecallvet.com</a>
+                    </div>
+                </div>
+                <div class="mt-8 text-center">
+                    <p class="text-lg">**Service Area:** Proudly serving [Your City/Region, e.g., "Greater Seattle Area"]. Please call or email to confirm service availability in your specific location.</p>
+                </div>
+                <!-- You can add a simple form integration here if you use Formspree or similar -->
+                <!-- Example with Formspree (replace YOUR_FORMSPREE_ID)
+                <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="mt-12 max-w-xl mx-auto bg-gray-700 p-8 rounded-lg shadow-xl">
+                    <div class="mb-4">
+                        <input type="text" name="name" placeholder="Your Name" class="w-full p-3 rounded-md bg-gray-600 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                    </div>
+                    <div class="mb-4">
+                        <input type="email" name="_replyto" placeholder="Your Email" class="w-full p-3 rounded-md bg-gray-600 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                    </div>
+                    <div class="mb-6">
+                        <textarea name="message" rows="5" placeholder="Your Message" class="w-full p-3 rounded-md bg-gray-600 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500" required></textarea>
+                    </div>
+                    <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-3 rounded-full transition duration-300 transform hover:scale-105">Send Message</button>
+                </form>
+                -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8 text-center rounded-b-lg">
+        <div class="container mx-auto px-4">
+            <p>&copy; 2025 HouseCallVet. All rights reserved. | <a href="#" class="hover:underline">Privacy Policy</a></p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <!-- Social Media Links (replace # with actual links) -->
+                <a href="#" class="hover:text-white transition duration-300">Facebook</a>
+                <a href="#" class="hover:text-white transition duration-300">Instagram</a>
+                <a href="#" class="hover:text-white transition duration-300">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" title="Go to top">Top</button>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenuOverlay.classList.remove('hidden');
+        });
+
+        closeMobileMenuButton.addEventListener('click', () => {
+            mobileMenuOverlay.classList.add('hidden');
+        });
+
+        function closeMobileMenu() {
+            mobileMenuOverlay.classList.add('hidden');
+        }
+
+        // Scroll to Top button functionality
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        scrollToTopBtn.addEventListener('click', function() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        });
+    </script>
+</body>
+</html>
+
+                      
